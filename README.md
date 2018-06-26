@@ -1,3 +1,2 @@
 # ireport-gantt-chart-example
-iReport Gantt chart example
-This is example to generate gantt chart PDF using iReport. 
+This is example to generate gantt chart PDF using iReport. The example using iReport v5.6.0.

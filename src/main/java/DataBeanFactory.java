@@ -8,13 +8,21 @@ public class DataBeanFactory {
 
 		Calendar calendar = Calendar.getInstance();
 
-		for(int i=1;i<8;i++) {
-			calendar.set(Calendar.HOUR_OF_DAY, i*1);
+		String series = "";
+		for(int i=1;i<9;i++) {
+			
+			if ( i <= 3) {
+				series = "P1 task";
+			} else if (i <= 6) {
+				series = "P2 task";
+			} else {
+				series = "P3 task";
+			}
+			calendar.add(Calendar.DAY_OF_MONTH, i);
 			Date startDate = calendar.getTime();
-			calendar.set(Calendar.HOUR_OF_DAY, i*3);
+			calendar.add(Calendar.DAY_OF_MONTH, i+1);
 			Date endDate = calendar.getTime();
-			String series = (i % 2 == 0) ? "High Priority" : "Normal";
-			ganttChartDataList.add(create(series, "Task" + i, startDate, endDate));
+			ganttChartDataList.add(create(series, "Task-"+ i, startDate, endDate));
 		}
 
 		return ganttChartDataList;
